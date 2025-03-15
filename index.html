@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Font Awesome CDN -->
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+
+    </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- SweetAlert2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.12/dist/sweetalert2.min.css" rel="stylesheet">
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.12/dist/sweetalert2.min.js"></script>
+
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -14,9 +25,9 @@
     <nav class="  sticky top-0 z-50 shadow-md w-full bg-gray-300 hidden"  id="nav">
         <div class="flex justify-between items-center p-6  border-b-2 border-gray-300  ">
         <div class="flex items-center ">
-            <h1 class="font-bold text-3xl">ENGLISH</h1>
+            <h1 class="font-bold text-xl">ENGLISH</h1>
             <img src="./assets/logo.png" alt="">
-            <h1 class="font-bold text-3xl">WINDOWS</h1>
+            <h1 class="font-bold text-xl">WINDOWS</h1>
         </div>
         <div class="flex gap-4 items-center">
             <button class="btn btn-soft btn-primary gap-2" id="faq-btn"><img src="./assets/fa-circle-question.png" alt="">FAQ</button>
@@ -30,7 +41,7 @@
         
         <section class="flex justify-between items-center p-6 " id="banner">
             <div class="flex flex-col gap-4">
-                <h1 class="font-bold text-3xl">English is Easy!!</h1>
+                <h1 class="font-bold text-3xl"><span class="text-blue-400">English</span> is Easy!!</h1>
                 <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
                 <div class="flex flex-col gap-4 ">
                     <input type="text" placeholder="Enter your name here" class="input" id="username" />
@@ -44,22 +55,28 @@
         </section>
     </header>
 
-    <main class="m-4 text-center">
+    <main class="mt-16 text-center hidden mb-8" id="main">
         <section class="section" id="learn-section">
-        <h1 class="font-bold text-3xl">Let's Learn Vocabularies</h1>
+        <h1 class="font-bold text-3xl"><span class="text-blue-400">Let's</span> Learn Vocabularies</h1>
         <div class=" flex gap-4 justify-center items-center m-4" id="btn-container">
             
 
         </div>
-        <div id="words-container" class="grid grid-cols-3 gap-4  m-8 p-8">
+    
+    
+        <section id="loader" class="text-center py-10 hidden">
+            <span class="loading loading-dots loading-xl"></span>
+          </section>
+      
+        <div id="words-container" class="grid grid-cols-3 gap-4  m-8 p-8 bg-gray-200">
             <div class="col-span-full flex justify-center items-center text-center flex-col gap-4">
-                <img src="./assets/alert-error.png" alt="">
-                <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-                <h2 class="font-semibold text-3xl">নেক্সট Lesson এ যান</h2>
+               
+                <p>আপনি এখনো কোন Lesson Select করেন ন</p>
+                <h2 class="font-semibold text-3xl">একটি Lesson Select করুন।</h2>
             </div>
         </div></section>
         <section class="mt-16 p-6 flex flex-col gap-4 mb-16 section" id="faq-section">
-            <h1 class="font-bold text-3xl mb-8">Frequently Asked Questions</h1>
+            <h1 class="font-bold text-3xl mb-8"><span class="text-blue-400">Frequently</span> Asked Questions</h1>
             <!-- <div class="w-full max-w-xl mx-auto"> -->
                 <div class="collapse collapse-plus bg-base-100 border border-base-300">
                     <input type="radio" name="js-accordion" checked="checked" />
@@ -146,13 +163,13 @@
     <div class="modal-action">
       <form method="dialog">
         <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
+        <button class="btn bg-blue-700 text-white">completed Learning</button>
       </form>
     </div>
   </div>
 </dialog>
     
-    <footer class="border-t-4 border-[#FFEBEB] py-20 px-8 section " id="logout-section">
+    <footer class="border-t-4 border-[#FFEBEB] py-20 px-8 section " id="logout-section" >
         <div class="flex justify-between items-center p-6    ">
             <div class="flex flex-col gap-2 justify-center">
             <div class="flex items-center ">
@@ -164,9 +181,9 @@
         <p>Providing ED-Tech Applications since 2025</p>
         </div>
             <div class="flex gap-2 items-center">
-                <a href=""><img src="./assets/instagram-thumb.png" alt=""></a>
-                <a href=""><img src="./assets/fb-thumb.png" alt=""></a>
-                <a href=""><img src="./assets/github-thumb.png" alt=""></a>
+                <a href="https://www.instagram.com/skcusefil12/"><img src="./assets/instagram-thumb.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100068704272071"><img src="./assets/fb-thumb.png" alt=""></a>
+                <a href="https://github.com/Hira703"><img src="./assets/github-thumb.png" alt=""></a>
                 <a href=""><img src="./assets/youtube-thumb.png" alt=""></a>
             
 
