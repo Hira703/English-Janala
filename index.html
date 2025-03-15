@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="  sticky top-0 z-50 shadow-md w-full bg-gray-300 hidden"  id="nav">
+        <div class="flex justify-between items-center p-6  border-b-2 border-gray-300  ">
+        <div class="flex items-center ">
+            <h1 class="font-bold text-3xl">ENGLISH</h1>
+            <img src="./assets/logo.png" alt="">
+            <h1 class="font-bold text-3xl">WINDOWS</h1>
+        </div>
+        <div class="flex gap-4 items-center">
+            <button class="btn btn-soft btn-primary gap-2" id="faq-btn"><img src="./assets/fa-circle-question.png" alt="">FAQ</button>
+            <button class="btn btn-soft btn-primary gap-2" id="learn-btn"><img src="./assets/fa-book-open.png" alt=""> LEARN</button>
+            <button class="btn btn-soft btn-primary gap-2" id="logout-btn"><img src="./assets/fa-arrow-right-from-bracket.png" alt=""> LOGOUT</button>
+        </div>
+        </div>
+
+    </nav>
+    <header>
+        
+        <section class="flex justify-between items-center p-6 " id="banner">
+            <div class="flex flex-col gap-4">
+                <h1 class="font-bold text-3xl">English is Easy!!</h1>
+                <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <div class="flex flex-col gap-4 ">
+                    <input type="text" placeholder="Enter your name here" class="input" id="username" />
+                    <input type="password" placeholder="Enter your password here" class="input"  id="password"/>
+                    <div><button class="btn btn-primary" id="get-started-btn" onclick="getstarted()">Get Started</button></div>
+                </div>
+            </div>
+            <div>
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+        </section>
+    </header>
+
+    <main class="m-4 text-center">
+        <section class="section" id="learn-section">
+        <h1 class="font-bold text-3xl">Let's Learn Vocabularies</h1>
+        <div class=" flex gap-4 justify-center items-center m-4" id="btn-container">
+            
+
+        </div>
+        <div id="words-container" class="grid grid-cols-3 gap-4  m-8 p-8">
+            <div class="col-span-full flex justify-center items-center text-center flex-col gap-4">
+                <img src="./assets/alert-error.png" alt="">
+                <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                <h2 class="font-semibold text-3xl">নেক্সট Lesson এ যান</h2>
+            </div>
+        </div></section>
+        <section class="mt-16 p-6 flex flex-col gap-4 mb-16 section" id="faq-section">
+            <h1 class="font-bold text-3xl mb-8">Frequently Asked Questions</h1>
+            <!-- <div class="w-full max-w-xl mx-auto"> -->
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="js-accordion" checked="checked" />
+                    <div class="collapse-title font-semibold text-left">What is the difference between var, let, and const?</div>
+                    <div class="collapse-content text-sm text-left">
+                        <p><strong>var:</strong> Function-scoped, can be redeclared and updated.</p>
+                        <p><strong>let:</strong> Block-scoped, can be updated but not redeclared.</p>
+                        <p><strong>const:</strong> Block-scoped, cannot be updated or redeclared.</p>
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="js-accordion" />
+                    <div class="collapse-title font-semibold text-left">What is the difference between map(), forEach(), and filter()?</div>
+                    <div class="collapse-content text-sm text-left">
+                        <p><strong>map():</strong> Returns a new array after transforming each element.</p>
+                        <p><strong>forEach():</strong> Iterates over elements but does not return a new array.</p>
+                        <p><strong>filter():</strong> Returns a new array with elements that pass a condition.</p>
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="js-accordion" />
+                    <div class="collapse-title font-semibold text-left">Explain arrow functions and how they differ from regular functions.</div>
+                    <div class="collapse-content text-sm text-left">
+                        <p><strong>Arrow Functions:</strong> A shorter syntax for functions using <code>() => {}</code>.</p>
+                        <p>- They do not have their own <code>this</code> value.</p>
+                        <p>- They cannot be used as constructors.</p>
+                        <p>- Implicit return for one-liners (<code>const sum = (a, b) => a + b;</code>).</p>
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="js-accordion" />
+                    <div class="collapse-title font-semibold text-left">How do JavaScript Promises work?</div>
+                    <div class="collapse-content text-sm text-left">
+                        <p>A <strong>Promise</strong> represents an operation that hasn't completed yet but is expected to.</p>
+                        <p>- It can be <code>Pending</code>, <code>Resolved</code>, or <code>Rejected</code>.</p>
+                        <p>- Use <code>.then()</code> for success and <code>.catch()</code> for errors.</p>
+                        <p>Example:</p>
+                        <code>
+                            let myPromise = new Promise((resolve, reject) => {<br>
+                            &nbsp;&nbsp;setTimeout(() => resolve("Done!"), 2000);<br>
+                            });<br>
+                            myPromise.then(res => console.log(res));
+                        </code>
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="js-accordion" />
+                    <div class="collapse-title font-semibold text-left">How do closures work in JavaScript?</div>
+                    <div class="collapse-content text-sm text-left">
+                        <p>A <strong>closure</strong> is when a function remembers its outer variables even after execution.</p>
+                        <p>Example:</p>
+                        <code>
+                            function outer() {<br>
+                            &nbsp;&nbsp;let count = 0;<br>
+                            &nbsp;&nbsp;return function() { count++; console.log(count); }<br>
+                            }<br>
+                            const counter = outer();<br>
+                            counter(); // 1<br>
+                            counter(); // 2
+                        </code>
+                    </div>
+                </div>
+            <!-- </div> -->
+            
+        </section>
+
+    </main>
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="word_details" class="modal">
+  <div class="modal-box">
+    <div id="details-container">
+<!-- <h2>${details.word} (<i class="fa-solid fa-microphone"></i> ${details.pronunciation
+})</h2>
+<p>meaning</p>
+<p>${details.meaning}</p>
+<p>meaning</p>
+<p>${details.sentence}</p> -->
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    
+    <footer class="border-t-4 border-[#FFEBEB] py-20 px-8 section " id="logout-section">
+        <div class="flex justify-between items-center p-6    ">
+            <div class="flex flex-col gap-2 justify-center">
+            <div class="flex items-center ">
+                <h1 class="font-bold text-xl">ENGLISH</h1>
+                <img src="./assets/logo.png" alt="">
+                <h1 class="font-bold text-xl">WINDOWS</h1>
+            </div>
+        <p>ইংরেজি শিখুন সহজে</p>
+        <p>Providing ED-Tech Applications since 2025</p>
+        </div>
+            <div class="flex gap-2 items-center">
+                <a href=""><img src="./assets/instagram-thumb.png" alt=""></a>
+                <a href=""><img src="./assets/fb-thumb.png" alt=""></a>
+                <a href=""><img src="./assets/github-thumb.png" alt=""></a>
+                <a href=""><img src="./assets/youtube-thumb.png" alt=""></a>
+            
+
+            </div>
+            </div>
+
+    </footer>
+    <!-- <h2>${details.word} (<button class="btn"> <i class="fa-solid fa-microphone"></i></button> ${details.pronunciation
+    })</h2>
+    <p>meaning</p>
+    <p>${details.meaning}</p>
+    <p>meaning</p>
+    <p>${details.sentence}</p>
+    <p>synonyms</p>
+    <div id="synonyms-container"></div> -->
+  <script src="./js/index.js"></script>  
+</body>
+</html>
