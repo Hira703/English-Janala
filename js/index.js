@@ -1,5 +1,6 @@
 
 
+
 const getstarted=()=>{
     const username=document.getElementById("username").value;
     const password=document.getElementById("password").value;
@@ -34,12 +35,23 @@ const hideLoader = () => {
   document.getElementById("loader").classList.add("hidden");
   document.getElementById("words-container").classList.remove("hidden");
 };
+const activeClass = (clickedButton) => {
+  // First, remove the "active" class from all buttons
+  document.querySelectorAll(".nav-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  // Then, add the "active" class to the clicked button
+  clickedButton.classList.add("active");
+};
+
 function removeActiveClass() {
   const activeButtons = document.getElementsByClassName("active");
   for (let btn of activeButtons) {
     btn.classList.remove("active");
   }
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   let sections = document.querySelectorAll(".section");
 
